@@ -2,9 +2,10 @@
 """ Basic flask app """
 from flask import Flask, render_template
 from flask_babel import Babel
+
+
 class Config:
     LANGUAGES = ["en", "fr"]
-
 
 
 app = Flask(__name__)
@@ -13,6 +14,7 @@ app.config.from_object(Config)
 
 
 babel = Babel(app, default_locale="en", default_timezone="UTC")
+
 
 @app.route('/')
 def index_page() -> str:
